@@ -36,3 +36,9 @@ Scenario: Add two numbers
 	| Brenda  | 48	| 4783965151 | 
 	| Lacie   | 48  | 4783965151 | 
 	| Lydia   | 48  | 4783965151 | 
+
+	Scenario: Check if I could get the dtails enterd via table from Extended Steps
+	When I fill all the mandatory details in the form
+	| Name    | Age | Phone      | Email                      |
+	| Woodrow | 48  | 4783965151 | woodrowdeveloper@gmail.com |
+	Then I should get the same value from Extended steps

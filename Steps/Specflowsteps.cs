@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using SpecFlow.Assist.Dynamic;
 
 namespace Specflowintro.Steps
 {
@@ -38,21 +39,34 @@ namespace Specflowintro.Steps
         [When(@"I fill all the mandatory details in the form")]
         public void WhenIFillAllTheMandatoryDetailsInTheForm(Table table)
         {
-            var details = table.CreateSet<EmployeeDetails>();
+            //var details = table.CreateSet<EmployeeDetails>();
 
-            foreach(EmployeeDetails emp in details)
+            //foreach(EmployeeDetails emp in details)
 
+            //{
+
+            //    Console.WriteLine("The details of employee " +emp.Name);
+            //    Console.WriteLine("*******************************");
+            //    Console.WriteLine(emp.Name);
+            //    Console.WriteLine(emp.Age);
+            //    Console.WriteLine(emp.Email);
+            //    Console.WriteLine(emp.Phone);
+
+            //}
+
+            //Work with Dynamic Assist
+            var details = table.CreateDynamicSet();
+
+            foreach (var emp in details)
             {
-
-                Console.WriteLine("The details of employee " +emp.Name);
+                Console.WriteLine("The details of employee " + emp.Name);
                 Console.WriteLine("*******************************");
                 Console.WriteLine(emp.Name);
                 Console.WriteLine(emp.Age);
                 Console.WriteLine(emp.Email);
                 Console.WriteLine(emp.Phone);
-
             }
-            
+
         }
 
         [When(@"I fill all the mandatory details in the form (.*), (.*) and (.*)")]
