@@ -231,12 +231,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check if I could get the dtails enterd via table from Extended Steps")]
+        [NUnit.Framework.DescriptionAttribute("Check if I could get the dtails enterd via Table from Extended Steps")]
         public virtual void CheckIfICouldGetTheDtailsEnterdViaTableFromExtendedSteps()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if I could get the dtails enterd via table from Extended Steps", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if I could get the dtails enterd via Table from Extended Steps", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 40
  this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -37,7 +37,7 @@ Scenario: Add two numbers
 	| Lacie   | 48  | 4783965151 | 
 	| Lydia   | 48  | 4783965151 | 
 
-	Scenario: Check if I could get the dtails enterd via table from Extended Steps
+	Scenario: Check if I could get the dtails enterd via Table from Extended Steps
 	When I fill all the mandatory details in the form
 	| Name    | Age | Phone      | Email                      |
 	| Woodrow | 48  | 4783965151 | woodrowdeveloper@gmail.com |

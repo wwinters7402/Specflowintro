@@ -12,6 +12,16 @@ namespace Specflowintro.Steps
     [Binding]
     class Specflowsteps
     {
+
+        public readonly EmployeeDetails employee;
+
+        public Specflowsteps(EmployeeDetails emp)
+        {
+
+            this.employee = emp;
+        }
+
+
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
@@ -39,33 +49,31 @@ namespace Specflowintro.Steps
         [When(@"I fill all the mandatory details in the form")]
         public void WhenIFillAllTheMandatoryDetailsInTheForm(Table table)
         {
-            //var details = table.CreateSet<EmployeeDetails>();
 
-            //foreach(EmployeeDetails emp in details)
+            var data = table.CreateDynamicSet();
 
+            foreach (var item in data)
+            {
+                employee.Age = (int) item.Age;
+                employee.Email = (string) item.Email;
+                employee.Name = (string) item.Name;
+                employee.Phone = (long)item.Phone;
+
+
+            }
+
+
+            //var details = table.CreateDynamicSet();
+
+            //foreach (var emp in details)
             //{
-
-            //    Console.WriteLine("The details of employee " +emp.Name);
+            //    Console.WriteLine("The details of employee " + emp.Name);
             //    Console.WriteLine("*******************************");
             //    Console.WriteLine(emp.Name);
             //    Console.WriteLine(emp.Age);
             //    Console.WriteLine(emp.Email);
             //    Console.WriteLine(emp.Phone);
-
             //}
-
-            //Work with Dynamic Assist
-            var details = table.CreateDynamicSet();
-
-            foreach (var emp in details)
-            {
-                Console.WriteLine("The details of employee " + emp.Name);
-                Console.WriteLine("*******************************");
-                Console.WriteLine(emp.Name);
-                Console.WriteLine(emp.Age);
-                Console.WriteLine(emp.Email);
-                Console.WriteLine(emp.Phone);
-            }
 
         }
 
